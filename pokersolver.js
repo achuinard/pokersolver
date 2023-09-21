@@ -61,7 +61,7 @@
       if (game.descr === 'standard' && new Set(cards).size !== cards.length) {
         throw new Error('Duplicate cards');
       }
-      
+
       // Get rank based on game.
       var handRank = this.game.handValues.length;
       for (var i=0; i<this.game.handValues.length; i++) {
@@ -348,9 +348,9 @@
       for (var i=0; i<cards.length; i++) {
         card = cards[i];
         if (card.rank === -1) {
-          wilds.push(cards[i]);  
+          wilds.push(cards[i]);
         } else {
-          nonWilds.push(cards[i]);  
+          nonWilds.push(cards[i]);
         }
       }
 
@@ -374,7 +374,7 @@
         if (cards && cards.length >= this.game.sfQualify) {
           possibleStraight = cards;
           break;
-        } 
+        }
       }
 
       if (possibleStraight) {
@@ -1690,12 +1690,12 @@
     },
     'joker': {
       'cardsInHand': 5,
-      'handValues': [NaturalRoyalFlush, FiveOfAKind, WildRoyalFlush, StraightFlush, FourOfAKind, FullHouse, Flush, Straight, ThreeOfAKind, TwoPair, HighCard],
+      'handValues': [NaturalRoyalFlush, FiveOfAKind, WildRoyalFlush, StraightFlush, FourOfAKind, FullHouse, Flush, Straight, ThreeOfAKind, TwoPair, OnePair, HighCard],
       'wildValue': 'O',
       'wildStatus': 1,
       'wheelStatus': 0,
       'sfQualify': 5,
-      'lowestQualified': ['4c', '3d', '3h', '2s', '2c'],
+      'lowestQualified': ['4c', '3d', '8h', 'Ks', 'Kc'],
       "noKickers": true
     },
     'deuceswild': {

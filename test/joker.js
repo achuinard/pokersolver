@@ -338,8 +338,13 @@ describe('Qualifying Hands', function() {
     winners.length.should.equal(1);
     return winners[0].should.equal(hand);
   });
-  it('One Pair should not qualify', function() {
+  it('Aces should qualify', function() {
     var hand = Hand.solve(['Ah', 'As', '6d', '3s', '2h'], gameForTest, true);
+    var winners = Hand.winners([hand]);
+    return winners.length.should.equal(1);
+  });
+  it('Queens should not qualify', function() {
+    var hand = Hand.solve(['Qh', 'Qs', '6d', '3s', '2h'], gameForTest, true);
     var winners = Hand.winners([hand]);
     return winners.length.should.equal(0);
   });

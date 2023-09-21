@@ -21,9 +21,13 @@ describe('A basic hand', function() {
     hand.cardPool[0].toString().should.equal('As');
     return hand.cardPool[4].toString().should.equal('Ah');
   });
-  return it('should return a correct description with a deuce', function() {
+  it('should return a correct description with a deuce', function() {
     var hand = Hand.solve(['Kh', 'As', '3c', '3s', '2h'], gameForTest);
     return hand.descr.should.equal('Three of a Kind, 3\'s');
+  });
+  return it('should detect a Wild Royal Flush', function() {
+    var hand = Hand.solve(['Ah', 'Jh', 'Th', 'Kh', '2h'], gameForTest);
+    return hand.descr.should.equal('Wild Royal Flush');
   });
 });
 
